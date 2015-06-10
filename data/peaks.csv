@@ -1,0 +1,60 @@
+peak,lat,lon,quadrangle,range,status,routes,year,grade,grade_bucket,cost,note,draw_sort
+"Culebra (14,047 ft)",37.1222,-105.1857,Culebra Peak,Sangre de Cristo,Other,,,N/A,N/A,N/A,Private land,1
+"Little Bear  (14,037 ft)",37.56668,-105.49723,Blanca Peak,Sangre de Cristo,Other,,,N/A,N/A,N/A,Too Hazardous to Maintain,1
+"Longs (14,255 ft)",40.2548,-105.6161,Longs Peak,Front,Other,,,N/A,N/A,N/A,Maintained by National Park Service,1
+"Castle (14,265 ft) & Conundrum (14,060 ft)",39.0095,-106.86139,Hayden Peak,Elk,Unsurveyed,Castle Creek,,Unknown,Unknown,Unknown,,2
+"El Diente (14,159 ft)",37.83929,-108.00522,Dolores Peak,San Juan,Unsurveyed,Kilpacker & Navajo Basins,,Unknown,Unknown,Unknown,,2
+"Eolus (14,083 ft) & North Eolus (14,039 ft)",37.6219,-107.6226,Columbine Pass,San Juan,Unsurveyed,Chicago Basin,,Unknown,Unknown,Unknown,,2
+"Kit Carson (14,165 ft) & Challenger Point (14,081 ft)",37.97958,-105.6025,Crestone Peak,Sangre de Cristo,Unsurveyed, North Slope,,Unknown,Unknown,Unknown,,2
+"Lincoln (14,286 ft) & Cameron (14,238 ft)",39.3515,-106.1115,Alma,Mosquito,Unsurveyed,Kite Lake Loop,,Unknown,Unknown,Unknown,,2
+"Maroon (14,156 ft)",39.0708,-106.989,Maroon Bells,Elk,Unsurveyed,South Ridge,,Unknown,Unknown,Unknown,,2
+"Pikes (14,110 ft)",38.8405,-105.0446,Pikes Peak,Front,Unsurveyed,Barr Trail & Crags Trail,,Unknown,Unknown,Unknown,,2
+"San Luis (14,014 ft)",37.9868,-106.9311,San Luis Peak,San Juan,Unsurveyed,Stewart & Cochetopa Creeks,,Unknown,Unknown,Unknown,,2
+"Sherman (14,036 ft)",39.2249,-106.1698,Mount Sherman,Mosquito,Unsurveyed,Fourmile Creek & Iowa Gulch,,Unknown,Unknown,Unknown,,2
+"Sunshine (14,001 ft)",37.92268,-107.42548,Redcloud Peak,San Juan,Unsurveyed,Redcloud traverse,,Unknown,Unknown,Unknown,,2
+"Tabeguache (14,155 ft)",38.62544,-106.25081,Saint Elmo,Sawatch,Unsurveyed,Shavano traverse,,Unknown,Unknown,Unknown,,2
+"Wilson Peak (14,017 ft)",37.8603,-107.9847,Mount Wilson,San Juan,Unsurveyed,Rock of Ages,,Unknown,Unknown,Unknown,,2
+"Mt. Wilson (14,246 ft)",37.8391,-107.9915,Mount Wilson,San Juan,Unsurveyed,Navajo Basin & Rock of Ages,,Unknown,Unknown,Unknown,,2
+"Blanca (14,345 ft) & Ellingwood Point (14,042 ft)",37.5774,-105.4857,Blanca Peak,Sangre de Cristo,Completed,Lake Como,2011-2012,A,A,$,,3
+"North Maroon (14,019 ft)",39.07595,-106.98708,Maroon Bells,Elk,Completed," Approach, Northeast Ridge",2012,A,A,$,,3
+"Harvard (14,420 ft)",38.9243,-106.3208,Mount Harvard,Sawatch,Completed,North Hornfork Basin,1999-2002,A-,A,$,,3
+"Humboldt (14,064 ft)",37.9761,-105.555,Crestone Peak,Sangre de Cristo,Completed, South Colony Lakes,1997-1998,A-,A,$,,3
+"Pyramid (14,018 ft)",39.0715,-106.9501,Maroon Bells,Elk,Completed,"Approach, Northeast Ridge",2005-2006,A-,A,$,,3
+"Capitol (14,130 ft)",39.1502,-107.083,Capitol Peak,Elk,Completed,Capitol Lake,2002,B,B,$,,4
+"Challenger Point (14,081 ft)",37.98024,-105.60643,Crestone Peak,Sangre de Cristo,Completed, South Colony Lakes,2001-2005,B,B,$,,4
+"Crestone (14,294 ft) & Needle (14,197 ft)",37.9667,-105.5853,Crestone Peak,Sangre de Cristo,Completed,South Colony Lakes,2001-2005,B,B,$,,4
+"Evans (14,264 ft)",39.58821,-105.64359,Mount Evans,Front,Completed,Chicago Lakes & Summit Lake,2005-2006,B,B,$$,,4
+"Tabeguache (14,155 ft)",38.62544,-106.25081,Saint Elmo,Sawatch,Completed,Jennings (Closed),2002,B,B,$,,4
+Yale  (14196 ft),38.8442,-106.3137,Mount Yale,Sawatch,Completed,Denny Creek,2008-2011,B,B,$,,4
+"Huron (14,003 ft)",38.9455,-106.438,Winfield,Sawatch,Completed,Clear Creek,1998-2002,B-,B,$$,,4
+"Massive (14,421 ft)",39.1875,-106.4756,Mount Massive,Sawatch,Completed,East Slopes,2006-2009,B-,B,$$,,4
+"Sunlight (14,059 ft) & Windom (14,082 ft)",37.6273,-107.59579,Storm King Peak,San Juan,Completed,Chicago Basin,2007-2010,B+,B,$,,4
+"Democrat (14,148 ft)",39.33956,-106.13989,Climax,Mosquito,Completed,Kite Lake,2008,C,C,$$$,,5
+"Holy Cross (14,005 ft)",39.4668,-106.4816,Mount of the Holy Cross,Sawatch,Completed,Halfmoon Pass,2011-2012,C,C,$$,,5
+"La Plata (14,336 ft)",39.0294,-106.4729,Mount Elbert,Sawatch,Completed,Northwest Ridge,1995,C,C,$,,5
+"Elbert (14,433 ft)",39.1177,-106.4453,Mount Elbert,Sawatch,Unplanned,Black Cloud,,C,C,$$$$,,5
+"Quandary (14,265 ft)",39.3972,-106.1064,Breckenridge,Tenmile,Unplanned,Blue Lakes,,C,C,$$$$,,5
+"Belford (14,197 ft) & Oxford  (14,153 ft)",38.9606,-106.3608,Mount Harvard,Sawatch,Completed,Missouri Gulch,1995-1996,C-,C,$$,,5
+"Sneffels (14,150 ft)",38.0036,-107.7922,Mount Sneffels,San Juan,Completed,Yankee Boy Basin,2003-2004),C-,C,$,,5
+"Uncompahgre (14,309 ft)",38.0716,-107.4621,Uncompahgre Peak,San Juan,Completed,Nellie Creek,2008,C-,C,$$$,,5
+"Handies (14,048 ft)",37.9129,-107.5043,Handies Peak,San Juan,Unplanned,Grizzly Gulch,,C-,C,$$,,5
+"Holy Cross (14,005 ft)",39.4668,-106.4816,Mount of the Holy Cross,Sawatch,Unplanned,Notch Mtn.,,C-,C,$,,5
+"Princeton (14,197 ft)",38.7492,-106.2424,Mount Antero,Sawatch,Unplanned,Radio Towers,,C-,C,$$$$,,5
+"Bross (14,172 ft)",39.33452,-106.1077,Alma,Mosquito,Completed,Bypass,2008,C+,C,$,Shavano traverse,5
+"North Massive (14,340 ft)",39.19561,-106.48636,Mount Massive,Sawatch,Completed,North Halfmoon Creek,2003-2005,C+,C,$$,,5
+"Quandary (14,265 ft)",39.3972,-106.1064,Breckenridge,Tenmile,Completed,East Slopes,2001-2002,C+,C,$$$$,,5
+"Grays (14,270 ft) & Torreys (14,267 ft)",39.6337,-105.8175,Grays Peak,Front,Completed,Stevens Gulch,2000-2002,D,D,$$$$,,6
+"Missouri (14,067 ft)",38.94755,-106.37836,Winfield,Sawatch,Completed,Missouri Gulch,2000-2001),D-,D,$$$,,6
+"Handies (14,048 ft)",37.9129,-107.5043,Handies Peak,San Juan,Unplanned,American Basin,,D-,D,$$$,,6
+"Lindsey (14,042 ft)",37.5838,-105.4448,Blanca Peak,Sangre de Cristo,Unplanned,Lily Lake,,D-,D,$$$$$,,6
+"Wetterhornn(14,015 ft)",38.0606,-107.5108,Wetterhorn Peak,San Juan,Completed,Matterhorn Creek,2004-2005,D+,D,$$$,,6
+"Antero (14,269 ft)",38.6741,-106.2462,Mount Antero,Sawatch,Unplanned,Baldwin Gulch,,D+,D,$,,6
+"Bierstadt (14,060 ft)",39.58252,-105.66862,Mount Evans,Front,Planned,Guanella Pass,2014-2015,F,F,$$$$$$,,7
+"Columbia (14,073 ft)",38.9034,-106.2974,Mount Harvard,Sawatch,Unplanned,North Hornfork Basin,,F,F,$$$$$,,7
+"Elbert (14,433 ft)",39.1177,-106.4453,Mount Elbert,Sawatch,Unplanned,North,,F,F,$$$$$,,7
+"Elbert (14,433 ft)",39.1177,-106.4453,Mount Elbert,Sawatch,Unplanned,East Slopes,,F,F,$$$$$,,7
+"Evans (14,264 ft)",39.58821,-105.64359,Mount Evans,Front,Unplanned,Guanella Pass,,F,F,$$$$$,,7
+"La Plata (14,336 ft)",39.0294,-106.4729,Mount Elbert,Sawatch,Unplanned,Winfield - SW Ridge,,F,F,$$$$$,,7
+"Redcloud (14,034 ft)",37.9409,-107.4217,Redcloud Peak,San Juan,Unplanned,Silver Creek,,F,F,$$$$,,7
+"Shavano (14,229 ft)",38.6193,-106.2393,Maysville,Sawatch,Unplanned,Blanks Gulch,,F,F,$$$$$$,,7
+"Snowmass (14,092 ft)",39.1187,-107.0665,Snowmass Mountain,Elk,Unplanned,Snowmass Creek,,F,F,$$$$$,,7

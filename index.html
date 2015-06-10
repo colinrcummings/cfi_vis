@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2015 Colorado 14ers Statewide Scorecard</title>
+    <!-- General metadata -->
+    <meta name="description" content="An interactive data visualization of the 2015 Colorado 14ers Statewide Scorecard"/>
+    <link rel="canonical" href="http://colinrcummings.github.io/cfi_vis/"/>  
+    <!-- Facebook open-graph metadata -->
+    <meta property="og:title" content="2015 Colorado 14ers Statewide Scorecard"/>
+    <meta property="og:description" content="An interactive data visualization of the 2015 Colorado 14ers Statewide Scorecard"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://colinrcummings.github.io/cfi_vis/"/>
+    <meta property="og:image" content="images/tbd.jpg"/>
+    <!-- Signet metadata -->
+    <meta name="signet:authors" content="Colin Cummings"/>
+    <meta name="signet:links" content="http://www.twitter.com/colinrcummings"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <!-- header -->
+      <div class="row text-center">
+        <div class="col-md-12">
+          <div>
+            <h2 class="inline">2015 Colorado 14ers Statewide Scorecard</h2>
+            <div id="question-container" class="inline"><i id="question" class="grey-text fa fa-question-circle" title="About this page" data-toggle="modal" data-target="#about-modal"></i></div>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+      <!-- map and bar charts-->
+      <div class="row text-center">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-xs-1 col-sm-2 col-md-1"></div>
+            <div class="col-xs-10 col-sm-8 col-md-10">
+              <h4>Location</h4>
+              <div id="map"></div>
+            </div>
+            <div class="col-xs-1 col-sm-2 col-md-1"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-12">
+              <div class="header-container text-center">
+                <h4 class="inline">Grade</h4>
+                <button type="button" id="grade-clear-btn" class="btn btn-xs clear-btn inline" onclick="clearBarClick('grade')"><span id="grade-text"></span> <i class="fa fa-times-circle"></i></button>
+              </div>
+              <svg id="grade-bar" class="chart"></svg>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-12">
+              <div class="header-container text-center">
+                <h4 class="inline">Cost</h4>
+                <button type="button" id="cost-clear-btn" class="btn btn-xs clear-btn inline" onclick="clearBarClick('cost')"><span id="cost-text"></span> <i class="fa fa-times-circle"></i></button>
+              </div>
+              <svg id="cost-bar" class="chart"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="row text-center">
+        <div class="col-md-12">
+          <hr>
+          <p><small>Created by <a target="_blank" href="http://twitter.com/colinrcummings/">Colin Cummings</a> with data from the <a target="_blank" href="http://www.14ers.org/">Colorado Fourteeners Initiative</a></small></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- about modal -->
+    <div id="about-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title text-center">About</h3>
+          </div>
+          <div class="modal-body">
+            <p>This is an interactive data visualization of the <a target="_blank" href="http://www.14ers.org/wp-content/uploads/SustainableTrails-14er-Report-Card-Final-6.9.2015.pdf">2015 Colorado Fourteeners Statewide Scorecard</a>, which was conducted by the <a target="_blank" href="http://www.14ers.org/">Colorado Fourteeners Initiative</a>. To interact with the data on a computer or mobile device:</p>
+            <ul>
+              <li>Zoom and pan the map (mouse wheel or finger pinch)</li>
+              <li>Click or touch a bar on one or multiple charts to drilldown into the data</li>
+              <li>Click or touch the clear button to remove a drilldown previously applied to a chart</li>
+            </ul>  
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">Created by <a target="_blank" href="http://twitter.com/colinrcummings/">Colin Cummings</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/jquery-2.1.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/crossfilter.min.js"></script>
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/lib/queue.v1.min.js"></script>
+    <script src="js/lib/topojson.min.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/lib/signet.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ga.js"></script>
+  </body>
+</html>

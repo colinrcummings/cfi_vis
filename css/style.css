@@ -1,0 +1,90 @@
+/* global styling */
+.inline {
+  display: inline-block;
+}
+
+
+/* header styling */
+#question-container {
+  vertical-align: 17px;
+}
+#question {
+  cursor: pointer;
+}
+
+
+/* map style */
+#map {
+   border: 1px solid #eee;
+   margin-bottom: 30px;
+}
+.county {
+  stroke: #000;
+  stroke-width: 0.5;
+}
+.city:hover,
+.peak:hover {
+  opacity: 1 !important;
+}
+
+
+/* bar chart style */
+#grade-clear-btn,
+#cost-clear-btn {
+  vertical-align: 2px;
+  margin-left: 4px;
+  display: none;
+}
+#grade-bar,
+#cost-bar {
+  min-height: 150px;
+}
+.grade-bar,
+.cost-bar {
+  cursor: pointer;
+}
+.axis text {
+  font: 8px sans-serif;
+}
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #777;
+}
+
+
+/* tooltip style */
+.tooltip {
+  position: absolute;
+  background-color: rgba(255,255,255,1.0);
+  padding: 1px;
+  border: 1px solid rgba(0,0,0,.2);
+  z-index: 10000;
+  font-family: Arial;
+  font-size: 13px;
+  pointer-events: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tooltip h4 {
+  margin: 0;
+  padding: 4px 14px;
+  line-height: 18px;
+  font-weight: normal;
+  background-color: rgba(247,247,247,0.75);
+  text-align: center;
+  border-bottom: 1px solid #ebebeb;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 1px 5px 0 0;
+}
+.tooltip p {
+  margin: 0px;
+  padding: 1px 14px;
+  text-align: center;
+}
