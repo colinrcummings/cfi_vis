@@ -30,8 +30,8 @@ var percentDenom;
 //page setup
 $( document ).ready(function(){
   queue()
-  .defer(d3.csv, '/data/peaks.csv')
-  .defer(d3.csv, '/data/cities.csv')
+  .defer(d3.csv, 'data/peaks.csv')
+  .defer(d3.csv, 'data/cities.csv')
   .awaitAll(function(error, data) {  
     //set crossfilter object
     peakCrossFilter = crossfilter(data[0]);

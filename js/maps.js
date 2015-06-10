@@ -41,7 +41,7 @@ function drawCOMap(peaks, cities) {
   //append g element to svg
   mapG = mapSVG.append('g');
   //load in GeoJSON data
-  d3.json('/data/maps/co_counties.json', function(json) {
+  d3.json('data/maps/co_counties.json', function(json) {
     //bind data and create one path per state feature
     mapG.selectAll('path')
      .data(topojson.feature(json, json.objects.counties).features)
