@@ -44,8 +44,8 @@
 #cost-bar {
   min-height: 155px !important;
 }
-.grade-bar,
-.cost-bar {
+.grade-bar:hover,
+.cost-bar:hover {
   cursor: pointer;
 }
 .axis text {
