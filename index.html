@@ -35,6 +35,42 @@
         </div>
       </div>
 
+
+      <div class="row text-center">
+        <div class="col-md-12">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span id="range-text">Select Range</span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="javascript:void(0)" onclick="rangeChange('All')">All</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Front')">Front</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Mosquito')">Mosquito</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Sawatch')">Sawatch</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Sangre de Cristo')">Sangre de Cristo</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Elk')">Elk</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('San Juan')">San Juan</a></li>
+              <li><a href="javascript:void(0)" onclick="rangeChange('Tenmile')">Tenmile</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span id="status-text">Select Status</span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="javascript:void(0)" onclick="statusChange('All')">All</a></li>
+              <li><a href="javascript:void(0)" onclick="statusChange('Completed')">Completed</a></li>
+              <li><a href="javascript:void(0)" onclick="statusChange('Planned')">Planned</a></li>
+              <li><a href="javascript:void(0)" onclick="statusChange('Unplanned')">Unplanned</a></li>
+              <li><a href="javascript:void(0)" onclick="statusChange('Unsurveyed')">Unsurveyed</a></li>
+              <li><a href="javascript:void(0)" onclick="statusChange('Other')">Other</a></li>
+            </ul>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+
       <!-- map and bar charts-->
       <div class="row text-center">
         <div class="col-md-6">

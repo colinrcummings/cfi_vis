@@ -78,6 +78,115 @@ function updateChartsAndMap() {
 }
 
 
+//dropdown functions
+function rangeChange (selection) {
+  if(selection === 'All'){
+    d3.select('#range-text').text('All Ranges');
+    rangeFilter.filterAll();
+  } else {
+    d3.select('#range-text').text(selection);
+    rangeFilter.filter(selection);
+  }
+  updateChartsAndMap();
+}
+
+function statusChange (selection) {
+  if(selection === 'All'){
+    d3.select('#status-text').text('All Statuses');
+    statusFilter.filterAll();
+  } else {
+    d3.select('#status-text').text(selection);
+    statusFilter.filter(selection);
+  }
+  updateChartsAndMap();
+}
+
+
+//bar click functions
+function barClick(clickRect, clickObj) {
+  switch(clickRect.className.baseVal) {
+    case 'grade-bar':
+      gradeFilter.filter(clickObj.key);
+      d3.select('#grade-text').text(clickObj.key);
+      d3.select('#grade-clear-btn').style('display','inline-block');
+      break;
+    case 'cost-bar':
+      costFilter.filter(clickObj.key);
+      d3.select('#cost-text').text(clickObj.key);
+      d3.select('#cost-clear-btn').style('display','inline-block');
+      break;
+  }
+  updateChartsAndMap();
+}
+
+function clearBarClick(filter) {
+  switch(filter) {
+    case 'grade':
+      gradeFilter.filterAll();
+      d3.select('#grade-clear-btn').style('display','none');
+      break;
+    case 'cost':
+      costFilter.filterAll();
+      d3.select('#cost-clear-btn').style('display','none');
+      break;
+  }
+  updateChartsAndMap();
+}
+
+
+//bar tooltip functions
+function barTooltipShow (hoverObj) {
+  //determine tooltip text
+  var tooltipText;
+  switch(hoverObj.key) {
+    case '$':
+      tooltipText = '< $125K';
+      break;
+    case '$$':
+      tooltipText = '$125K - $250K';
+      break;
+    case '$$$':
+      tooltipText = '$250K - $500K';
+      break;
+    case '$$$$':
+      tooltipText = '$500K - $1 million';
+      break;
+    case '$$$$$':
+      tooltipText = '$1 million - $2 million';
+      break;
+    case '$$$$$$':
+      tooltipText = '> $2 million';
+      break;
+    default: 
+      tooltipText = hoverObj.key;
+} 
+  //create tooltip
+  var tooltip = d3.select('body').append('div')
+    .attr('id', 'chart-tooltip')
+    .attr('class', 'tooltip');
+  tooltip
+    .html('<h4>' + tooltipText + '</h4>' + '<p>' + hoverObj.values + ' (' + oneDecimalPct(hoverObj.values / percentDenom) + ')' + '</p>');   
+  //position tooltip
+  var mouse = d3.mouse(d3.select('body').node()).map( function(d) { return parseInt(d); } );
+  var screenWidth = $('body').width();
+  var tooltipWidth = $('#chart-tooltip').width();
+  if((mouse[0] + tooltipWidth) > screenWidth) {
+    tooltip
+      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')     
+      .style('top', (mouse[1] + 20) + 'px');
+  } else {
+    tooltip
+      .style('left', mouse[0] + 'px')     
+      .style('top', (mouse[1] + 20) + 'px');
+  }
+  //show tooltip
+  tooltip   
+    .transition()        
+    .duration(300) 
+    .style('opacity', .95);  
+}
+
+
 //bar chart classes
 var BarChart = function(chart) {
   this.margin = {top: 0, right: 5, bottom: 35, left: 25};
@@ -299,91 +408,6 @@ BarChart.prototype.update = function(chart, data) {
         }
       })
       .style('stroke','#777');
-}
-
-
-//bar click functions
-function barClick(clickRect, clickObj) {
-  switch(clickRect.className.baseVal) {
-    case 'grade-bar':
-      gradeFilter.filter(clickObj.key);
-      d3.select('#grade-text').text(clickObj.key);
-      d3.select('#grade-clear-btn').style('display','inline-block');
-      break;
-    case 'cost-bar':
-      costFilter.filter(clickObj.key);
-      d3.select('#cost-text').text(clickObj.key);
-      d3.select('#cost-clear-btn').style('display','inline-block');
-      break;
-  }
-  updateChartsAndMap();
-}
-
-function clearBarClick(filter) {
-  switch(filter) {
-    case 'grade':
-      gradeFilter.filterAll();
-      d3.select('#grade-clear-btn').style('display','none');
-      break;
-    case 'cost':
-      costFilter.filterAll();
-      d3.select('#cost-clear-btn').style('display','none');
-      break;
-  }
-  updateChartsAndMap();
-}
-
-
-//bar tooltip functions
-function barTooltipShow (hoverObj) {
-  //determine tooltip text
-  var tooltipText;
-  switch(hoverObj.key) {
-    case '$':
-      tooltipText = '< $125K';
-      break;
-    case '$$':
-      tooltipText = '$125K - $250K';
-      break;
-    case '$$$':
-      tooltipText = '$250K - $500K';
-      break;
-    case '$$$$':
-      tooltipText = '$500K - $1 million';
-      break;
-    case '$$$$$':
-      tooltipText = '$1 million - $2 million';
-      break;
-    case '$$$$$$':
-      tooltipText = '> $2 million';
-      break;
-    default: 
-      tooltipText = hoverObj.key;
-} 
-  //create tooltip
-  var tooltip = d3.select('body').append('div')
-    .attr('id', 'chart-tooltip')
-    .attr('class', 'tooltip');
-  tooltip
-    .html('<h4>' + tooltipText + '</h4>' + '<p>' + hoverObj.values + ' (' + oneDecimalPct(hoverObj.values / percentDenom) + ')' + '</p>');   
-  //position tooltip
-  var mouse = d3.mouse(d3.select('body').node()).map( function(d) { return parseInt(d); } );
-  var screenWidth = $('body').width();
-  var tooltipWidth = $('#chart-tooltip').width();
-  if((mouse[0] + tooltipWidth) > screenWidth) {
-    tooltip
-      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')     
-      .style('top', (mouse[1] + 20) + 'px');
-  } else {
-    tooltip
-      .style('left', mouse[0] + 'px')     
-      .style('top', (mouse[1] + 20) + 'px');
-  }
-  //show tooltip
-  tooltip   
-    .transition()        
-    .duration(300) 
-    .style('opacity', .95);  
 }
 
 

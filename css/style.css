@@ -12,6 +12,11 @@
   cursor: pointer;
 }
 
+/* btn styling */
+.btn-group {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
 
 /* map style */
 #map {
@@ -37,7 +42,7 @@
 }
 #grade-bar,
 #cost-bar {
-  min-height: 150px;
+  min-height: 155px !important;
 }
 .grade-bar,
 .cost-bar {
