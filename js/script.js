@@ -190,8 +190,8 @@ function barTooltipShow (hoverObj) {
 //bar chart classes
 var BarChart = function(chart) {
   this.margin = {top: 0, right: 5, bottom: 35, left: 25};
-  this.viewBoxWidth = 348 - this.margin.left - this.margin.right;
-  this.viewBoxHeight = (this.viewBoxWidth * 0.49) - this.margin.top - this.margin.bottom;
+  this.viewBoxWidth = 346 - this.margin.left - this.margin.right;
+  this.viewBoxHeight = (this.viewBoxWidth * 0.3) - this.margin.top - this.margin.bottom;
   this.chartWidth = $('.chart').width();
   var mapWidth = $('#map').width() ;
   var mapHeight = mapWidth * viewBoxHeight / viewBoxWidth;
