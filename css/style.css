@@ -112,7 +112,6 @@ header {
   opacity: 1 !important;
 }
 
-
 /* bar chart style */
 #grade-clear-btn,
 #cost-clear-btn {
@@ -136,7 +135,6 @@ header {
   fill: none;
   stroke: #777;
 }
-
 
 /* tooltip style */
 .tooltip {
@@ -172,4 +170,12 @@ header {
   margin: 0px;
   padding: 1px 14px;
   text-align: center;
+}
+
+/* about-modal */
+body.modal-open {
+  overflow: visible;
+}
+#about-modal {
+  padding-right: 0px !important;
 }
