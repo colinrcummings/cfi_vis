@@ -7,7 +7,7 @@
     <title>2015 Colorado 14ers Statewide Scorecard</title>
     <!-- General metadata -->
     <meta name="description" content="An interactive data visualization of the 2015 Colorado 14ers Statewide Scorecard"/>
-    <link rel="canonical" href="http://colinrcummings.github.io/cfi_vis/"/>  
+    <link rel="canonical" href="http://colinrcummings.github.io/cfi_vis/"/>
     <!-- Facebook open-graph metadata -->
     <meta property="og:title" content="2015 Colorado 14ers Statewide Scorecard"/>
     <meta property="og:description" content="An interactive data visualization of the 2015 Colorado 14ers Statewide Scorecard"/>
@@ -17,59 +17,68 @@
     <!-- Signet metadata -->
     <meta name="signet:authors" content="Colin Cummings"/>
     <meta name="signet:links" content="http://www.twitter.com/colinrcummings"/>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="container-fluid">
 
-      <!-- header -->
-      <div class="row text-center">
-        <div class="col-md-12">
-          <div>
-            <h2 class="inline">2015 Colorado 14ers Statewide Scorecard</h2>
-            <div id="question-container" class="inline"><i id="question" class="grey-text fa fa-question-circle" title="About this page" data-toggle="modal" data-target="#about-modal"></i></div>
+    <!-- header -->
+    <header>
+      <section class="splash">
+        <div class="splash-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <img src="/images/colorado.svg" id="colorado-svg">
+                <h1>2015 Colorado 14ers Statewide Scorecard</h1>
+              </div>
+            </div>
           </div>
-          <hr>
         </div>
-      </div>
-
+      </section>
+    </header>
+    <div id="viz" class="container-fluid">
       <!-- dropdowns -->
       <div class="row text-center">
         <div class="col-md-12">
-          <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span id="range-text">Select Range</span> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="javascript:void(0)" onclick="rangeChange('All')">All</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Front')">Front</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Mosquito')">Mosquito</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Sawatch')">Sawatch</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Sangre de Cristo')">Sangre de Cristo</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Elk')">Elk</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('San Juan')">San Juan</a></li>
-              <li><a href="javascript:void(0)" onclick="rangeChange('Tenmile')">Tenmile</a></li>
-            </ul>
+          <div id="user-selections">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" id="range-btn" data-toggle="dropdown" aria-expanded="false">
+                <span id="range-text">Select Range</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)" onclick="rangeChange('All')">All</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Front')">Front</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Mosquito')">Mosquito</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Sawatch')">Sawatch</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Sangre de Cristo')">Sangre de Cristo</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Elk')">Elk</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('San Juan')">San Juan</a></li>
+                <li><a href="javascript:void(0)" onclick="rangeChange('Tenmile')">Tenmile</a></li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span id="status-text">Select Status</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:void(0)" onclick="statusChange('All')">All</a></li>
+                <li><a href="javascript:void(0)" onclick="statusChange('Completed')">Completed</a></li>
+                <li><a href="javascript:void(0)" onclick="statusChange('Planned')">Planned</a></li>
+                <li><a href="javascript:void(0)" onclick="statusChange('Unplanned')">Unplanned</a></li>
+                <li><a href="javascript:void(0)" onclick="statusChange('Unsurveyed')">Unsurveyed</a></li>
+                <li><a href="javascript:void(0)" onclick="statusChange('Other')">Other</a></li>
+              </ul>
+            </div>
+            <div id="question-container" class="inline">
+              <i id="question" class="grey-text fa fa-question-circle" title="About this page" data-toggle="modal" data-target="#about-modal"></i>
+            </div>
           </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <span id="status-text">Select Status</span> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="javascript:void(0)" onclick="statusChange('All')">All</a></li>
-              <li><a href="javascript:void(0)" onclick="statusChange('Completed')">Completed</a></li>
-              <li><a href="javascript:void(0)" onclick="statusChange('Planned')">Planned</a></li>
-              <li><a href="javascript:void(0)" onclick="statusChange('Unplanned')">Unplanned</a></li>
-              <li><a href="javascript:void(0)" onclick="statusChange('Unsurveyed')">Unsurveyed</a></li>
-              <li><a href="javascript:void(0)" onclick="statusChange('Other')">Other</a></li>
-            </ul>
-          </div>
-          <hr>
         </div>
       </div>
-
       <!-- map and bar charts-->
       <div class="row text-center">
         <div class="col-md-6">
@@ -101,7 +110,6 @@
           </div>
         </div>
       </div>
-
       <!-- footer -->
       <div class="row text-center">
         <div class="col-md-12">
@@ -109,7 +117,6 @@
           <p><small>Created by <a target="_blank" href="http://colinrcummings.github.io/">Colin Cummings</a> with data from the <a target="_blank" href="http://www.14ers.org/">Colorado Fourteeners Initiative</a></small></p>
         </div>
       </div>
-
     </div>
 
     <!-- about modal -->
@@ -127,7 +134,7 @@
               <li>Zoom and pan the map (mouse wheel or finger pinch)</li>
               <li>Click or touch a bar on one or multiple charts to drilldown into the data</li>
               <li>Click or touch the clear button to remove a drilldown previously applied to a chart</li>
-            </ul>  
+            </ul>
           </div>
           <div class="modal-footer">
             <p class="text-center">Created by <a target="_blank" href="http://colinrcummings.github.io/">Colin Cummings</a></p>
@@ -135,7 +142,7 @@
         </div>
       </div>
     </div>
-    
+
     <script src="js/lib/jquery-2.1.1.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/crossfilter.min.js"></script>

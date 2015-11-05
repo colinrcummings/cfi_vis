@@ -13,7 +13,7 @@ var zoom = d3.behavior.zoom()
   .scaleExtent([1, 8]);
 
 
-//map functions 
+//map functions
 function drawCOMap(peaks, cities) {
   //setup svg dimensions
   viewBoxWidth = 650;
@@ -36,8 +36,11 @@ function drawCOMap(peaks, cities) {
     .attr('viewBox', '0 0 ' + viewBoxWidth + ' ' + viewBoxHeight)
     .attr('width', mapWidth)
     .attr('height', mapHeight)
-    .attr('id', 'co-svg')
-    .call(zoom.on('zoom', move));
+    .attr('id', 'co-svg');
+  //configure zoom based off screen size
+  if($(window).width() > 750) {
+    mapSVG.call(zoom.on('zoom', move));
+  }
   //append g element to svg
   mapG = mapSVG.append('g');
   //load in GeoJSON data
@@ -93,20 +96,20 @@ function drawPeaks (data) {
             break;
           case 'D':
             return '#fdae61';
-            break;  
+            break;
           case 'F':
             return '#d7191c';
-            break;  
+            break;
         }
       }
     })
     .style('stroke','black')
     .on('mouseover', function(d) {
       peakTooltipShow(d);
-    })  
-    .on('mouseout', function() { 
+    })
+    .on('mouseout', function() {
       tooltipHide();
-    }) 
+    })
     .attr('transform', function(d) {
       return 'translate(' + projection([
         d.lon,
@@ -137,8 +140,8 @@ function drawCities (data) {
     .style('stroke','black')
     .on('mouseover', function(d) {
       cityTooltipShow(d);
-    })  
-    .on('mouseout', function() { 
+    })
+    .on('mouseout', function() {
       tooltipHide();
     });
 }
@@ -152,29 +155,29 @@ function peakTooltipShow (hoverObj) {
   //determine text
   if (hoverObj.status === 'Other') {
     tooltip.html(
-      '<h4>' + hoverObj.peak + '</h4>' + 
+      '<h4>' + hoverObj.peak + '</h4>' +
       '<p>' + '<b>Status: </b>' + hoverObj.status + '</p>' +
-      '<p>' + '<b>Note: </b>' + hoverObj.note + '</p>');    
+      '<p>' + '<b>Note: </b>' + hoverObj.note + '</p>');
   } else if (hoverObj.status === 'Unsurveyed') {
     tooltip.html(
-      '<h4>' + hoverObj.peak + '</h4>' + 
+      '<h4>' + hoverObj.peak + '</h4>' +
       '<p>' + '<b>Route(s): </b>' + hoverObj.routes + '</p>' +
-      '<p>' + '<b>Status: </b>' + hoverObj.status + '</p>');    
+      '<p>' + '<b>Status: </b>' + hoverObj.status + '</p>');
   } else if (hoverObj.status === 'Unplanned') {
     tooltip.html(
-      '<h4>' + hoverObj.peak + '</h4>' + 
+      '<h4>' + hoverObj.peak + '</h4>' +
       '<p>' + '<b>Route(s): </b>' + hoverObj.routes + '</p>' +
       '<p>' + '<b>Status: </b>' + hoverObj.status + '</p>' +
       '<p>' + '<b>Grade: </b>' + hoverObj.grade + '</p>' +
-      '<p>' + '<b>Cost: </b>' + hoverObj.cost + '</p>');    
+      '<p>' + '<b>Cost: </b>' + hoverObj.cost + '</p>');
   } else {
     tooltip.html(
-      '<h4>' + hoverObj.peak + '</h4>' + 
+      '<h4>' + hoverObj.peak + '</h4>' +
       '<p>' + '<b>Route(s): </b>' + hoverObj.routes + '</p>' +
       '<p>' + '<b>Status: </b>' + hoverObj.status + '</p>' +
       '<p>' + '<b>Year(s): </b>' + hoverObj.year + '</p>' +
       '<p>' + '<b>Grade: </b>' + hoverObj.grade + '</p>' +
-      '<p>' + '<b>Cost: </b>' + hoverObj.cost + '</p>');    
+      '<p>' + '<b>Cost: </b>' + hoverObj.cost + '</p>');
   }
   //position tooltip
   var mouse = d3.mouse(d3.select('body').node()).map( function(d) { return parseInt(d); } );
@@ -182,18 +185,18 @@ function peakTooltipShow (hoverObj) {
   var tooltipWidth = $('#map-tooltip').width();
   if((mouse[0] + tooltipWidth) > screenWidth) {
     tooltip
-      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')     
+      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')
       .style('top', (mouse[1] + 20) + 'px');
   } else {
     tooltip
-      .style('left', mouse[0] + 'px')     
+      .style('left', mouse[0] + 'px')
       .style('top', (mouse[1] + 20) + 'px');
   }
   //show tooltip
-  tooltip   
-    .transition()        
-    .duration(300) 
-    .style('opacity', .95);  
+  tooltip
+    .transition()
+    .duration(300)
+    .style('opacity', .95);
 }
 
 function cityTooltipShow (hoverObj) {
@@ -203,24 +206,24 @@ function cityTooltipShow (hoverObj) {
     .attr('class', 'tooltip');
   tooltip
     .html(
-      '<h4>' + hoverObj.name + '</h4>' + 
-      '<p>' + '<b>Elevation: </b>' + noDecimalNum(hoverObj.elevation) + ' ft' + '</p>');    
+      '<h4>' + hoverObj.name + '</h4>' +
+      '<p>' + '<b>Elevation: </b>' + noDecimalNum(hoverObj.elevation) + ' ft' + '</p>');
   //position tooltip
   var mouse = d3.mouse(d3.select('body').node()).map( function(d) { return parseInt(d); } );
   var screenWidth = $('body').width();
   var tooltipWidth = $('#map-tooltip').width();
   if((mouse[0] + tooltipWidth) > screenWidth) {
     tooltip
-      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')     
+      .style('left', (mouse[0] + (screenWidth - (mouse[0] + tooltipWidth + 5))) + 'px')
       .style('top', (mouse[1] + 20) + 'px');
   } else {
     tooltip
-      .style('left', mouse[0] + 'px')     
+      .style('left', mouse[0] + 'px')
       .style('top', (mouse[1] + 20) + 'px');
   }
   //show tooltip
-  tooltip   
-    .transition()        
-    .duration(300) 
-    .style('opacity', .95);  
+  tooltip
+    .transition()
+    .duration(300)
+    .style('opacity', .95);
 }
