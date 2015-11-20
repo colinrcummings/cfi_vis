@@ -119,6 +119,9 @@ header {
   margin-left: 4px;
   display: none;
 }
+.chart {
+  width: 70%;
+}
 #grade-bar,
 #cost-bar {
   min-height: 155px !important;
@@ -178,4 +181,14 @@ body.modal-open {
 }
 #about-modal {
   padding-right: 0px !important;
+}
+
+/* internet explorer */
+@media screen and (min-width:0\0) {
+  .splash-content {
+    display: inline !important;
+  }
+  #colorado-svg {
+    margin-top: 175px;
+  }
 }
